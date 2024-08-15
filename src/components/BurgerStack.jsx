@@ -1,4 +1,4 @@
-const BurgerStack = ({ stack }) => {
+const BurgerStack = ({ stack, removeFromBurger }) => {
     const handleClick = (ingredient) => {
         removeFromBurger(ingredient);
     };
