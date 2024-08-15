@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { availableIngredients } from '../App.jsx';
+import Ingredient from './Ingredient.jsx';
 
 const IngredientList = ({ addToBurger }) => {
     const handleClick = (ingredient) => {
@@ -9,7 +9,7 @@ const IngredientList = ({ addToBurger }) => {
     return (
         <ul>
             {availableIngredients.map((ingredient, i) => (
-                <li key={i} style={{ backgroundColor: ingredient.color }}>{ingredient.name}<button onClick={() => handleClick(ingredient)}>+</button></li>
+                <Ingredient key={i} ingredient={ingredient} i={i} handleClick={handleClick} addToBurger={addToBurger} />
             ))}
         </ul>
     );
