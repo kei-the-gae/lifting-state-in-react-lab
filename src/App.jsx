@@ -27,12 +27,18 @@ const App = () => {
     setStack([...stack, ingredient]);
   };
 
+  const removeFromBurger = (ingredientIdx) => {
+    const newStackArr = [...stack];
+    newStackArr.splice(ingredientIdx, 1);
+    setStack(newStackArr);
+  };
+
   return (
     <main>
       <h1>Burger Stacker</h1>
       <section>
         <IngredientList addToBurger={addToBurger} />
-        <BurgerStack stack={stack} />
+        <BurgerStack stack={stack} removeFromBurger={removeFromBurger} />
       </section>
     </main>
   );
